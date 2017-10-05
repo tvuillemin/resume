@@ -1,0 +1,165 @@
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[10pt,a4paper]{altacv}
+\geometry{left=1cm,
+          right=9cm,
+          marginparwidth=6.8cm,
+          marginparsep=1.2cm,
+          top=1.25cm,
+          bottom=1.25cm}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+\usepackage{eurosym}
+
+\definecolor{Mulberry}{HTML}{72243D}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{Sepia}
+\colorlet{accent}{Mulberry}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+% \addbibresource{sample.bib}
+
+\begin{document}
+\name{Thibaut Vuillemin}
+\tagline{R\&D software engineer}
+\photo{2.8cm}{Avatar}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{contact@thibautvuillemin.com}
+  \phone{+33 6 42 00 42 35}
+  %\mailaddress{Address, Street, 00000 County}
+  \location{Lyon, France}
+  %\homepage{www.thibautvuillemin.com}
+  %\twitter{@twitterhandle}
+  \printinfo{\faMale}{28 y.o.}
+  \linebreak
+  \linkedin{linkedin.com/in/thibautvuillemin/}
+  \github{github.com/tvuillemin}
+  \printinfo{\faCar}{Driving license}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+%   \orcid{orcid.org/0000-0000-0000-0000}
+}
+
+%% Make the header extend all the way to the right, if you want. Extend the right margin by 8cm (=6.8cm marginparwidth + 1.2cm marginparsep)
+\begin{adjustwidth}{}{-8cm}
+\makecvheader
+\end{adjustwidth}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+\cvsection[sidebar]{Positions}
+
+\cvevent{R\&D engineer}{Stormshield}{September 2015 -- Current job}{Lyon, France}
+\begin{itemize}
+\item Development of a cloud-based service for malware detection
+\item Development of a web service for malware database exploration
+\item Operation and enhancement of the company cloud infrastructure
+\item Development of an SDK for firewalls
+\end{itemize}
+
+\divider
+
+\cvevent{Software engineer}{Kien}{October 2014 -- July 2015}{Delft, The Netherlands}
+\begin{itemize}
+\item Prototyping of a multi-room wireless sound system
+\end{itemize}
+
+\divider
+
+\cvevent{QA engineer}{Alstom Transport {\footnotesize via Sogeti HT}}{October 2012 -- October 2014}{Lyon, France}
+\begin{itemize}
+\item Validation of embedded information systems for trains
+\end{itemize}
+
+\divider
+
+\cvevent{Summer intern}{ARM Ltd.}{June 2011 -- October 2011}{Cambridge, United Kingdom}
+
+%\cvevent{Pendant les études}
+%\begin{itemize}
+%\item Stage de 4 mois chez ARM à Cambridge, UK
+%\end{itemize}
+
+
+%\cvsection{Projects}
+%
+%\cvevent{Project 1}{Funding agency/institution}{}{}
+%\begin{itemize}
+%\item Details
+%\end{itemize}
+%
+%\divider
+%
+%\cvevent{Project 2}{Funding agency/institution}{Project duration}{}
+%A short abstract would also work.
+%
+%\medskip
+
+\cvsection{Technical skills}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+\cvachievement{\faCode}{Programming}{Low-level and scripting languages}
+\wheelchart{1.5cm}{0.5cm}{%
+  4/8em/accent!25/Bash,
+  8/8em/accent!75/Python,
+  4/8em/accent!50/C,
+  2/8em/accent!75/Go,
+  4/8em/accent!50/Javascript
+}
+\bigskip
+
+\cvachievement{\faTerminal}{Systems}{CfM, Containers, Database and Monitoring}
+\wheelchart{1.5cm}{0.5cm}{%
+  6/8em/accent!75/Ansible,
+  4/8em/accent!50/Prometheus,
+  6/8em/accent!75/Docker,
+  4/8em/accent!50/MongoDB,
+  2/8em/accent!25/ELK
+}
+\bigskip
+
+%\cvachievement{\faUsers}{Human skills}{Interpersonal and soft skills}
+%\cvskill{Teamwork}{5}
+%\cvskill{Critical thinking}{4}
+%\cvskill{Public speaking}{3}
+%\cvskill{Conflict resolution}{2}
+
+%\clearpage
+%\cvsection[page2sidebar]{Publications}
+%
+%\nocite{*}
+%
+%\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+%
+%\divider
+%
+%\printbibliography[heading=pubtype,title={\printinfo{\faFileTextO}{Journal Articles}},type=article]
+%
+%\divider
+%
+%\printbibliography[heading=pubtype,title={\printinfo{\faGroup}{Conference Proceedings}},type=inproceedings]
+
+%% If the NEXT page doesn't start with a \cvsection but you'd
+%% still like to add a sidebar, then use this command on THIS
+%% page to add it. The optional argument lets you pull up the 
+%% sidebar a bit so that it looks aligned with the top of the
+%% main column.
+% \addnextpagesidebar[-1ex]{page3sidebar}
+
+
+\end{document}
